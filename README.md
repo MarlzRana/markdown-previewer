@@ -26,6 +26,7 @@ Libraries used:
 - <a href="https://cdnjs.com/libraries/font-awesome" target="_blank">Font Awesome</a>
 
 Preprocessors used:
+
 - <a href="https://sass-lang.com/" target="_blank">SCSS</a>
 - <a href="https://babeljs.io/" target="_blank">Babel</a>
 

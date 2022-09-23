@@ -25,6 +25,10 @@ Libraries used:
 - <a href="https://cdnjs.com/libraries/prism" target="_blank">Prism</a>
 - <a href="https://cdnjs.com/libraries/font-awesome" target="_blank">Font Awesome</a>
 
+Preprocessors used:
+- <a href="https://sass-lang.com/" target="_blank">SCSS</a>
+- <a href="https://babeljs.io/" target="_blank">Babel</a>
+
 Test suite:
 
 - <a href="https://github.com/freeCodeCamp/testable-projects-fcc" target="_blank">FCC Testable Projects</a>

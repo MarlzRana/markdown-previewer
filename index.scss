@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+//SCSS Variables
+$light-blue: #c0d8d8;
+$medium-blue: #87b5b5;
+$medium-dark-blue: #5fa3a3;
+$dark-blue: #224b4b;
+
+//SCSS Mixins
+@mixin flex-row {
+  display: flex;
+}
+
+@mixin flex-row-center {
+  @include flex-row;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center-both {
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin match-parent-size {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin div-border-with-shadow {
+  border: 2px solid black;
+  box-shadow: 1px 1px 10px 2px $dark-blue;
+}
+
+//SCSS
+html,
+body,
+#app {
+  min-height: 100%;
+  background-color: $medium-blue;
+}
+
+body {
+  //The fonts
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#app {
+  @include flex-row-center;
+}
+
+#editor-window,
+#previewer {
+  @include flex-column;
+  background-color: $medium-blue;
+}
+
+#app-internal {
+  @include flex-column-center-both;
+}
+
+#editor-window {
+  @include div-border-with-shadow;
+  width: calc(20px + 40vw);
+  height: calc(200px + 8vw);
+  margin: 10px;
+  > #editor-input {
+    @include match-parent-size;
+    border-top: 1px solid black;
+    > textarea {
+      @include match-parent-size;
+      resize: none;
+      border: none;
+      background-color: $light-blue;
+    }
+  }
+}
+
+#previewer {
+  @include div-border-with-shadow;
+  width: calc(400px + 30vw);
+  min-height: calc(300px + 10vw);
+  margin: 10px;
+}
+
+#previewer-header,
+#editor-header {
+  @include flex-row;
+  align-items: center;
+  background-color: $medium-dark-blue;
+  > i {
+    font-size: 1.7rem;
+    padding: 5px 10px;
+  }
+  > h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  > .fa-expand,
+  .fa-compress {
+    font-size: 1.6rem;
+    margin-left: auto;
+  }
+}
+
+//Markdown styling
+#preview {
+  padding: 5px 10px;
+  background-color: $light-blue;
+  h1 {
+    font-size: 30px;
+    border-bottom: 2px solid black;
+  }
+
+  h2 {
+    font-size: 25px;
+    border-bottom: 1px solid black;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  pre,
+  code {
+    background-color: white;
+  }
+
+  pre {
+    overflow: auto;
+    padding: 5px;
+  }
+
+  blockquote {
+    > p {
+      border-left: 3px solid grey;
+      padding-left: 3px;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    td,
+    th {
+      border: 2px solid black;
+    }
+    td,
+    th {
+      padding: 0px 5px;
+    }
+  }
+
+  p,
+  img {
+    max-width: 100%;
+  }
+
+  .token {
+    &.comment {
+      color: grey;
+    }
+
+    &.keyword {
+      color: blue;
+    }
+
+    &.function {
+      color: red;
+    }
+
+    &.punctuation {
+      color: grey;
+    }
+
+    &.operator {
+      color: brown;
+    }
+
+    &.string {
+      color: green;
+    }
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  #previewer {
+    width: calc(200px + 30vw);
+  }
+}

@@ -1,4 +1,4 @@
-# FreeCodeCamp - Front End Development Libraries - Random Quote Machine
+# FreeCodeCamp - Front End Development Libraries - Markdown Previewer
 
 Created by Dineth Marlin Ranasinghe:
 
